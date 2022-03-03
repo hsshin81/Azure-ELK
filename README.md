@@ -8,6 +8,51 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - _TODO: Enter the playbook file._
 
+```
+---
+- name: Install ELK with Docker
+  hosts: elk
+  become: true
+  tasks:
+
+    - name: Set memory
+      sysctl:
+        name: vm.max_map_count
+        value: 262144
+        state: present
+
+    - name: Install Docker.io
+      apt:
+        update_cache: yes
+        name: docker.io
+        state: present
+
+    - name: Install pip3
+      apt:
+        name: python3-pip
+        state: present
+
+    - name: Install Python Docker Module
+      pip:
+        name: docker
+        state: present
+
+    - name: Install sebp/elk:761
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        restart_policy: always
+        published_ports: 
+          - 5601:5601
+          - 9200:9200
+          - 5044:5044
+
+    - name: Make sure docker is running
+      systemd:
+        name: docker
+        enabled: yes
+```
+
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
@@ -31,12 +76,12 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name      | Function       | IP Address | Operating System |
+|-----------|----------------|------------|------------------|
+| Jump Box  | Gateway        | 10.0.0.4   | Linux            |
+| Web-1     | DVWA Container | 10.0.0.6   |                  |
+| Web-2     | DVWA Container | 10.0.0.5   |                  |
+| ELK Stack | ELK            | 10.1.0.4   |                  |
 
 ### Access Policies
 
