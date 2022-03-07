@@ -147,3 +147,7 @@ A user made 100 repeated attempts to connect to Web-1 via SSH using a shell scri
 Web-2 is experiencing a surge in CPU usage. Metricbeats is able to capture and visualize the data.
 ![cpu_stress](images/cpu_stress.png)
 
+**Example 3: Wget-DoS Attack**
+
+Web-2 experienced a DoS attack using Wget. A shell script sent 100 Wget requests which Metricbeats was able to capture and visualize.
+![wget_dos](images/wget_dos.png)
