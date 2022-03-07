@@ -4,9 +4,11 @@ The files in this repository were used to configure the network depicted below.
 
 ![elk_stack_diagram](images/elk_stack_diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above. Alternatively, select portions of the Ansible playbook file may be used to install only certain pieces of it, such as Filebeat.
 
   - [install-elk.yml](install-elk.yml)
+  - [filebeat-playbook.yml](filebeat-playbook.yml)
+  - [metricbeat-playbook.yml](metricbeat-playbook.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -44,7 +46,7 @@ Only the Jumpbox Provisioner and ELK Stack(?) can accept connections from the In
 - 68.126.204.104
 
 Machines within the network can only be accessed by the Jumpbox Provisioner. The machines and IP addresses that are allowed to access the ELK VM are:
-- Jumpbox VM Ansible Container 13.82.148.124 10.0.0.4
+- Jumpbox VM Ansible Container 13.82.148.124 and 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
