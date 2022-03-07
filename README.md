@@ -138,6 +138,7 @@ host: "ELK_IP:5601"
 
 ### Misc Information
 The following are examples of how the ELK server can be used from an incidence response perspective.
+
 **Example 1: Failed SSH Attempts**
 
 A user made 100 repeated attempts to connect to Web-1 via SSH using a shell script. Filebeats is able to capture the log data.
