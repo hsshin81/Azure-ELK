@@ -82,9 +82,10 @@ We have installed the following Beats on these machines:
 - Web-2: Filebeats and Metricbeats
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 - Filebeats collects log data (e.g. Web logs)
 ![filebeat_sample1](/images/filebeat_sample1.png)
+
+
 - Metricbeats collects metrics and system statistics (e.g. CPU usage)
 ![metricbeat_sample1](/images/metricbeat_sample1.png)
  
@@ -92,8 +93,21 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the `filebeat-config.yml` file to `/etc/ansible/`.
+- `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat >> /etc/ansible/filebeat-config.yml`
+- Update the `/etc/ansible/filebeat-config.yml` file to include
+line #1106
+```
+output.elasticsearch:
+hosts: ["ELK_IP:9200"]
+username: "elastic"
+password: "changeme"
+```
+and line #1806
+```
+setup.kibana:
+host: "ELK_IP:5601"
+```
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
