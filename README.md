@@ -109,11 +109,11 @@ and line #1806
 setup.kibana:
 host: "ELK_IP:5601"
 ```
-- ![filebeat-playbook.yml](filebeat-playbook.yml)
+- ![filebeat-playbook.yml](/filebeat-playbook.yml)
 - Run the Filebeat playbook using `ansible-playbook filebeat-playbook.yml`.
 - To check that the installation worked, navigate to the Filebeat installation page on the ELK server GUI. Scroll to **Step 5: Module Status** and click **Check Data.**
 
-- ![metricbeat_playbook.yml](metricbeat-playbook.yml)
+- ![metricbeat_playbook.yml](/metricbeat-playbook.yml)
 - Run the Metricbeat playbook using `ansible-playbook metricbeat-playbook.yml`
 - To check that the installation worked, navigate to the Metricbeat installation page on the ELK server GUI. Scroll to **Step 5: Module Status** and click **Check Data.**
 
