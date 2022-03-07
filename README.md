@@ -139,8 +139,11 @@ host: "ELK_IP:5601"
 ### Misc Information
 **Example 1: Failed SSH Attempts**
 
-A user made 100 repeated attempts to connect to Web-1 via SSH using a shell script.
+A user made 100 repeated attempts to connect to Web-1 via SSH using a shell script. Filebeats is able to capture the log data.
 ![ssh_attempts](images/ssh_attempts.png)
 
+**Example 2: CPU Stress**
 
+Web-2 is experiencing a surge in CPU usage. Metricbeats is able to capture and visualize the data.
+![cpu_stress](images/cpu_stress.png)
 
