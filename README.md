@@ -96,6 +96,7 @@ SSH into the control node and follow the steps below:
 - Copy the `filebeat-config.yml` file to `/etc/ansible/`.
 - `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat >> /etc/ansible/filebeat-config.yml`
 - Update the `/etc/ansible/filebeat-config.yml` file to include
+
 line #1106
 ```
 output.elasticsearch:
@@ -108,7 +109,12 @@ and line #1806
 setup.kibana:
 host: "ELK_IP:5601"
 ```
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- ![filebeat-playbook.yml](filebeat-playbook.yml)
+- Run the Filebeat playbook using `ansible-playbook filebeat-playbook.yml`.
+- To check that the installation worked, navigate to the Filebeat installation page on the ELK server GUI. Scroll to **Step 5: Module Status** and click **Check Data.**
+
+- ![metricbeat_playbook.yml](metricbeat-playbook.yml)
+- Run the Metricbeat playbook using `ansible-playbook metricbeat-playbook.yml`
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
