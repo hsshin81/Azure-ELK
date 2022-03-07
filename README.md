@@ -48,17 +48,19 @@ Machines within the network can only be accessed by the Jumpbox Provisioner. The
 
 A summary of the access policies in place can be found in the table below.
 
-| Name      | Publicly Accessible | Allowed IP Addresses         |
-|-----------|---------------------|------------------------------|
-| Jumpbox   | No                  | 68.126.204.104               |
-| Web-1     | No                  | 10.0.0.4                     |
-| Web-2     | No                  | 10.0.0.4                     |
-| ELK Stack | No                  | 68.126.204.104 13.82.148.124 |
+| Name      | Publicly Accessible | Allowed IP Addresses            |
+|-----------|---------------------|---------------------------------|
+| Jumpbox   | No                  | 68.126.204.104                  |
+| Web-1     | No                  | 10.0.0.4                        |
+| Web-2     | No                  | 10.0.0.4                        |
+| ELK Stack | No                  | 68.126.204.104<br>13.82.148.124 |
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually. Configuration with Ansible has several advantages such as:
+- Simple: Ansible playbooks are human readable
+- Powerful: Can deploy apps and manage workflow
+- Agentless: No requirement for special agents on client machines
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
