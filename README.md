@@ -85,10 +85,9 @@ These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 - Filebeats collects log data (e.g. Web logs)
 ![filebeat_sample1](/images/filebeat_sample1.png)
-- Metricbeats collects 
-
-
-
+- Metricbeats collects metrics and system statistics (e.g. CPU usage)
+![metricbeat_sample1](/images/metricbeat_sample1.png)
+ 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
