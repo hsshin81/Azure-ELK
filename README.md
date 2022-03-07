@@ -119,6 +119,9 @@ host: "ELK_IP:5601"
 - Run the Metricbeat playbook using `ansible-playbook metricbeat-playbook.yml`
 - To check that the installation worked, navigate to the Metricbeat installation page on the ELK server GUI. Scroll to **Step 5: Module Status** and click **Check Data.**
 
+### Misc Information
+
+
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
