@@ -135,3 +135,11 @@ host: "ELK_IP:5601"
   tasks:
 ```
 - To check that the installation worked, navigate to the Metricbeat installation page on the ELK server GUI. Scroll to **Step 5: Module Status** and click **Check Data.**
+
+### Misc Information
+**Example 1: Failed SSH Attempts**
+A user made 100 repeated attempts to connect to Web-1 via SSH using a shell script.
+![ssh_attempts](images/ssh_attempts.png)
+
+
+
