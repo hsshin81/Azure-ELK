@@ -6,52 +6,8 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - install_elk.yml
+  - [install-elk.yml](install-elk.yml)
 
-```
----
-- name: Install ELK with Docker
-  hosts: elk
-  become: true
-  tasks:
-
-    - name: Set memory
-      sysctl:
-        name: vm.max_map_count
-        value: 262144
-        state: present
-
-    - name: Install Docker.io
-      apt:
-        update_cache: yes
-        name: docker.io
-        state: present
-
-    - name: Install pip3
-      apt:
-        name: python3-pip
-        state: present
-
-    - name: Install Python Docker Module
-      pip:
-        name: docker
-        state: present
-
-    - name: Install sebp/elk:761
-      docker_container:
-        name: elk
-        image: sebp/elk:761
-        restart_policy: always
-        published_ports: 
-          - 5601:5601
-          - 9200:9200
-          - 5044:5044
-
-    - name: Make sure docker is running
-      systemd:
-        name: docker
-        enabled: yes
-```
 
 This document contains the following details:
 - Description of the Topology
@@ -66,21 +22,20 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly reliable, in addition to restricting malicious traffic to the network via its security rules. The Jumpbox provides a single entrypoint for managing the VMs in the virtual network. This is beneficial because it requires only a single port for access via SSH or RDP which reduces the attack surface.
+Load balancing ensures that the application will be highly available, in addition to restricting malicious traffic to the network via its security rules. The Jumpbox provides a single entrypoint for managing the VMs in the virtual network. This is beneficial because it requires only a single port for access via SSH or RDP which reduces the attack surface.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
+- Filebeat monitors log data and forwards it to either Elasticsearch or Logstash.
+- Metricbeat monitors metrics and forwards it to either Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name      | Function       | IP Address | Operating System |
 |-----------|----------------|------------|------------------|
 | Jumpbox   | Gateway        | 10.0.0.4   | Linux            |
-| Web-1     | DVWA Container | 10.0.0.6   |                  |
-| Web-2     | DVWA Container | 10.0.0.5   |                  |
-| ELK Stack | ELK            | 10.1.0.4   |                  |
+| Web-1     | Web Server     | 10.0.0.6   | Linux            |
+| Web-2     | Web Server     | 10.0.0.5   | Linux            |
+| ELK Stack | ELK Server     | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
