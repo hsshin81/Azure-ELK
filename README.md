@@ -52,10 +52,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name      | Publicly Accessible | Allowed IP Addresses            |
 |-----------|---------------------|---------------------------------|
-| Jumpbox   | No                  | 68.126.204.104                  |
+| Jumpbox   | No                  | 68.126.*.*                  |
 | Web-1     | No                  | 10.0.0.4                        |
 | Web-2     | No                  | 10.0.0.4                        |
-| ELK Stack | No                  | 68.126.204.104<br>13.82.148.124 |
+| ELK Stack | No                  | 68.126.*.*<br>13.82.148.124 |
 
 ### Elk Configuration
 
